@@ -1,0 +1,97 @@
+.blog-navbar {
+    display: flex;
+    align-items: center;
+
+    &__link {
+        font-size: $font-size-h5;
+        color: $white;
+        font-weight: $bold-wght;
+        @include link-hover;
+        @include rwd($mobile) {
+            font-size: $font-size-h6;
+        }
+    }
+
+    &__btn {
+        color: $white;
+        font-size: $font-size-p2;
+    }
+}
+
+.blog-img {
+    height: 230px;
+}
+
+
+
+
+
+// blog-page
+
+.breadcrumb {
+
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        margin-right: 8px;
+        &:not(:first-child) {
+            @include before(8px, 24px) {
+                content: "/";
+            }
+        }
+    }
+
+    &__link {
+        &.active {
+            color: $primary;
+        }
+        @include link-hover;
+    }
+}
+
+.blog-copy {
+    font-size: $font-size-h6;
+    color: $gray-6;
+    text-align: justify;
+
+    &--hover {
+        @include link-hover {
+            color: $primary;
+            opacity: 1;
+        }
+    }
+}
+
+.tag {
+    font-size: $font-size-h4;
+    font-weight: $bold-wght;
+    color: $primary;
+    text-transform: lowercase;
+    @include link-hover;
+
+    &--md {
+    @include rwd($pad) {
+        font-size: $font-size-h6;
+    }}
+
+    &--sm {
+    @include rwd($mobile) {
+        font-size: $font-size-h6;
+    }}
+}
+
+.fb-btn {
+    width: 24px;
+    height: 24px;
+    @include bg-cover("/assets/images/logo-facebook.png")
+}
+
+.ig-btn {
+    width: 24px;
+    height: 24px;
+    @include bg-cover("/assets/images/logo-instagram.png")
+}
+

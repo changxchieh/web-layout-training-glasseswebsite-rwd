@@ -1,0 +1,72 @@
+.product-banner {
+  height: 296px;
+  @include rwd($mobile) {
+    height: 136px;
+  }
+
+  & img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.product-nav {
+
+  &-wrap {
+    @include rwd($pad) {
+      max-width: 100%;
+    }
+  }
+
+  &__item {
+    border: 1px solid $gray-3;
+    position: relative;
+
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+
+    &:hover &--hover,
+    &--hover.active {
+      display: block;
+      width: 100%;
+      height: 8px;
+      background-color: $primary;
+      position: absolute;
+      left: 0;
+      transform: translateY(-7px); // cover border 1px
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: $font-size-p2;
+    font-weight: $medium-wght;
+    text-align: center;
+    @include rwd($pad) {
+      font-size: $font-size-h4;
+    }
+    @include rwd($mobile) {
+      font-size: $font-size-h6;
+    }
+  }
+}
+
+.product-color-type-1,
+.product-color-type-2 {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+
+.product-color-type-1 {
+  background-color: $success-1;
+}
+
+.product-color-type-2 {
+  background-color: $success-2;
+}
+
+
+

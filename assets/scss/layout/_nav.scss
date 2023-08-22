@@ -1,0 +1,63 @@
+.navbar {
+  
+  &-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include rwd($mobile) {
+      max-width: 100%;
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &-logo {
+    display: block;
+    width: 80px;
+    height: 49px;
+    @include bg-cover("/assets/images/logo-white.png");
+    @include hide-text;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    @include rwd($mobile) {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    @include rwd($mobile) {
+      width: 50%;
+      text-align: center;
+      border: $white-border;
+
+      &:nth-child(1) {
+        border-right: none;
+        border-bottom: none;
+      }
+
+      &:nth-child(2) {
+        border-bottom: none;
+      }
+
+      &:nth-child(3) {
+        border-right: none;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: $font-size-h5;
+    color: $white;
+    @include link-hover;
+    @include rwd($mobile) {
+      font-size: $font-size-h6;
+    }
+  }
+}
+
+
+

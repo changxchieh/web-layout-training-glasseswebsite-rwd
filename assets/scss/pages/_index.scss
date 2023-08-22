@@ -1,0 +1,145 @@
+.index-banner {
+  position: relative;
+  height: 787px;
+  @include rwd($mobile) {
+    height: 396px;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-copy {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: end;
+  }
+
+  &-title {
+    font-size: $font-size-h1;
+    font-weight: $bold-wght;
+    color: $primary-dark;
+    @include rwd($mobile) {
+      font-size: $font-size-h4;
+    }
+  }
+
+  &-subtitle {
+    font-size: $font-size-h3;
+    color: $primary-dark;
+    @include rwd($mobile) {
+      font-size: $font-size-h6;
+    }
+  }
+}
+
+.co-branding-bg {
+  @include bg-cover("/assets/images/index-bg.png");
+  @include rwd($pad) {
+    background-image: url(/assets/images/index-bg-md.png);
+  }
+  @include rwd($mobile) {
+    background-image: url(/assets/images/index-bg-sm.png);
+  }
+}
+
+.index-card-text-body {
+  min-height: 120px;
+}
+
+.index-textarea {
+  height: 136px;
+}
+
+textarea {
+  resize: none; // 禁止拉動輸入框作用
+  
+  // 隱藏滾動條外框
+  -ms-overflow-style: none; // IE、Edge
+     scrollbar-width: none; // Firefox
+
+  // 滾動條寬度
+  &::-webkit-scrollbar {
+    width: 6px; 
+  }
+  
+  // 滾動條滑塊顏色
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    -webkit-border-radius: 3px; // for Chrome、Safari
+       -moz-border-radius: 3px; // for Firefox 
+            border-radius: 3px;
+  }
+  
+  // 滾動條軌道背景顏色
+  &::-webkit-scrollbar-track {
+    background-color: $primary-light; 
+  }
+}
+
+// custom checkbox
+
+.privacy-check {
+  flex-direction: row-reverse;
+  align-self: start;
+  position: relative;
+  cursor: pointer;
+
+  // Hide the browser's default checkbox
+  &__box {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  // Create a custom checkbox
+  &__mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: $primary-light;
+    border: $dark-border;
+  }
+
+  // On mouse-over, add a background color
+  &:hover &__box ~ &__mark {
+    background-color: $primary;
+  }
+
+  // When the checkbox is checked, add a background
+  &__box:checked ~ &__mark {
+    background-color: $primary;
+  }
+
+  // Create the checkmark 
+  &__mark:after {
+    content: "";
+    position: absolute;
+
+    // Style the checkmark (v)
+    left: 8px;
+    top: 5px;
+    width: 7px;
+    height: 10px;
+    border: solid $primary-light;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+
+    // hidden when not checked
+    display: none;
+  }
+
+  // Show the checkmark when checked 
+  &__box:checked ~ &__mark:after {
+    display: block;
+  }
+}
+

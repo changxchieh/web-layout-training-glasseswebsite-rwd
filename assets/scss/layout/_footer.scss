@@ -1,0 +1,75 @@
+.footer {
+
+  &-body {
+    @include rwd($pad) {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: start;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    @include rwd($pad) {
+      display: none;
+    }
+
+    &__link {
+      font-size: $font-size-h6;
+      color: $white;
+      @include link-hover;
+    }
+  }
+}
+
+.social {
+
+  &__link {
+    width: 48px;
+    height: 48px;
+    @include link-hover;
+    @include rwd($pad) {
+      width: 40px;
+      height: 40px;
+    }
+    @include rwd($mobile) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.footer-info {
+
+  &-text {
+    font-size: $font-size-h3;
+    @include rwd($mobile) {
+      font-size: $font-size-h6;
+    }
+  }
+
+  &-icon {
+    font-size: $font-size-base * 2.5; // 40px
+    @include rwd($mobile) {
+      font-size: $font-size-p4; // 18px
+    }
+  }
+}
+
+.copyright {
+  border-top: $white-border;
+  display: flex;
+  @include rwd($mobile) {
+    display: block;
+
+    &__link {
+      display: block;
+      font-size: $font-size-sm;
+      color: $white;
+      @include rwd($mobile) {
+        font-size: $font-size-h6;
+      }
+    }
+  }
+}

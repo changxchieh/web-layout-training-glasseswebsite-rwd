@@ -1,0 +1,111 @@
+.container {
+  max-width: 1296px + $gutter;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+    @include rwd($pad) {
+      max-width: 696px + $gutter;
+    }
+    @include rwd($mobile) {
+      max-width: 348px + $gutter;
+    }
+}
+
+.container-fluid {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -($gutter / 2);
+  margin-right: -($gutter / 2);
+}
+
+
+// desktop first 製作 columns
+
+// 方式一：用迴圈生成 .col-1 ~ .col-12 
+
+// @for $var from 1 through $grid-sum {
+//   .col-#{$var} {
+//     max-width: 100% * ($var / $grid-sum);
+//     padding-left: $gutter / 2;
+//     padding-right: $gutter / 2;
+//   }
+// }
+
+// 再依序處理 斷點樣式 .col-*-1 ~ .col-*-12
+// @for $var from 1 through $grid-sum {
+//   .col-md-#{$var} {
+//     max-width: 100% * ($var / $grid-sum);
+//     padding-left: $gutter / 2;
+//     padding-right: $gutter / 2;
+//   }
+// }
+
+// 方式二：一併處理 .col-1 ~ .col-12  &  .col-*-1 ~ .col-*-12 
+
+%col {
+  width: 100%;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+}
+
+@each $key, $value in $grid-breakpoints {
+  @for $var from 1 through $grid-sum {
+    @if not $value {
+      .col-#{$var} {
+        @extend %col;
+      }
+    } @else {
+      .col-#{$key}-#{$var} {
+        @extend %col;
+      }
+    } 
+  }
+}
+
+// 加入 @media 斷點
+
+@each $key, $value in $grid-breakpoints {
+  @if not $value {
+    @for $var from 1 through $grid-sum {
+      .col-#{$var} {
+        max-width: 100% * ($var / $grid-sum);
+        flex: 0 0 (100% * ($var / $grid-sum));
+      }
+    }
+  } @else {
+    @include rwd($value) {
+      @for $var from 1 through $grid-sum {
+        .col-#{$key}-#{$var} {
+          max-width: 100% * ($var / $grid-sum);
+          flex: 0 0 (100% * ($var / $grid-sum));
+        }
+      }
+    }
+  }
+}
+
+
+// 如果不要 gutters 的話
+// 將 margin 與其下一階層 class 名稱含有 col- 之對象的 padding 一併設定為 0 
+.no-gutters {
+  margin-left: 0px;
+  margin-right: 0px;
+
+  > [class*='col-'] {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.w-50 {
+  width: 50%;
+}

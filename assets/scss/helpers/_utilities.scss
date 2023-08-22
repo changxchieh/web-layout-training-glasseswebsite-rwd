@@ -1,0 +1,706 @@
+// font size
+
+%theme-fonts {
+  font-family: $theme-fonts;
+}
+
+.h1 {
+  font-size: $font-size-h1;
+  @extend %theme-fonts;
+}
+
+.h2 {
+  font-size: $font-size-h2;
+  @extend %theme-fonts;
+}
+
+.h3 {
+  font-size: $font-size-h3;
+  @extend %theme-fonts;
+}
+
+.h4 {
+  font-size: $font-size-h4;
+  @extend %theme-fonts;
+}
+
+.h5 {
+  font-size: $font-size-h5;
+  @extend %theme-fonts;
+}
+
+.h6 {
+  font-size: $font-size-h6;
+  @extend %theme-fonts;
+}
+
+.p1 {
+  font-size: $font-size-p1;
+  @extend %theme-fonts;
+}
+
+.p2 {
+  font-size: $font-size-p2;
+  @extend %theme-fonts;
+}
+
+.p3 {
+  font-size: $font-size-p3;
+  @extend %theme-fonts;
+}
+
+.p4 {
+  font-size: $font-size-p4;
+  @extend %theme-fonts;
+}
+
+.fs-sm {
+  font-size: $font-size-sm;
+  @extend %theme-fonts;
+}
+
+
+
+
+
+// line height 
+
+.lh-normal {
+  line-height: 1.5;
+}
+
+.lh-md {
+  line-height: 1.875;
+}
+
+.lh-icon {
+  line-height: 1.2;
+}
+
+
+
+
+
+// font weight
+
+.fw-normal {
+  font-weight: $regular-wght;
+}
+.fw-medium {
+    font-weight: $medium-wght;
+}
+.fw-bold {
+    font-weight: $bold-wght;
+}
+.fw-black {
+  font-weight: $black-wght;
+}
+
+
+
+
+
+// text style
+
+.text-em {
+  font-style: italic;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.text-lower {
+  text-transform: lowercase;
+}
+
+.text-ellipsis--5 {
+  @include text-ellipsis--5;
+}
+
+
+
+
+
+// text color
+
+.text-primary {
+  color: $primary;
+}
+
+.text-primary-dark {
+  color: $primary-dark;
+}
+
+.text-black {
+  color: $black;
+}
+
+.text-white {
+  color: $white;
+}
+
+.text-black-50 {
+  color: $gray-5;
+}
+
+.text-black-60 {
+  color: $gray-6;
+}
+
+
+
+
+
+// text align
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+
+
+
+
+// background color
+
+.bg-primary {
+  background-color: $primary;
+}
+
+.bg-primary-light {
+  background-color: $primary-light;
+}
+
+.bg-primary-dark {
+  background-color: $primary-dark;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+
+
+
+
+// border
+
+.light-border {
+  border: 1px solid $gray-4;
+}
+
+.light-border-b {
+  border-bottom: 1px solid $gray-4;
+}
+
+.dark-border {
+  border: 1px solid $gray-8;
+}
+
+.white-border {
+  border:  1px solid $white;
+}
+
+
+
+
+
+// display
+
+.d-none {
+  display: none;
+}
+
+.d-lg-none {
+  @include rwd($desktop) {
+    display: none;
+  }
+}
+
+.d-md-none {
+  @include rwd2($mobile, $pad) {
+    display: none;
+  }
+}
+
+.d-sm-none {
+  @include rwd($mobile) {
+    display: none;
+  }
+}
+
+.d-block {
+  display: block;
+}
+
+.d-lg-block {
+  @include rwd2($mobile, $desktop) {
+    display: block;
+  }
+}
+
+.d-md-block {
+  @include rwd2($mobile, $pad) {
+    display: block;
+  }
+}
+
+.d-sm-block {
+  @include rwd($mobile) {
+    display: block;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.fxw-w {
+  flex-wrap: wrap;
+}
+
+.ai-c {
+  align-items: center;
+}
+
+.jc-e {
+  justify-content: flex-end;
+}
+
+.jc-c {
+  justify-content: center;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-md-col {
+  @include rwd($pad) {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+
+
+
+
+// spacing
+// margin auto
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      .m-auto {
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+      }
+    }
+    @else {
+      @include rwd($value) {
+        .m-#{$key}-auto {
+          margin-top: auto !important;
+          margin-right: auto !important;
+          margin-bottom: auto !important;
+          margin-left: auto !important;
+        }
+      }
+    }
+}
+  
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      .mt-auto {
+        margin-top: auto;
+      }
+    }
+    @else {
+      @include rwd($value) {
+        .mt-#{$key}-auto {
+          margin-top: auto !important;
+        }
+      }
+    }
+}
+  
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      .me-auto {
+        margin-right: auto;
+      }
+    }
+    @else {
+      @include rwd($value) {
+        .me-#{$key}-auto {
+          margin-right: auto !important;
+        }
+      }
+    }
+}
+  
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      .mb-auto {
+        margin-bottom: auto;
+      }
+    }
+    @else {
+      @include rwd($value) {
+        .mb-#{$key}-auto {
+          margin-bottom: auto !important;
+        }
+      }
+    }
+}
+  
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      .ms-auto {
+        margin-left: auto;
+      }
+    }
+    @else {
+      @include rwd($value) {
+        .ms-#{$key}-auto {
+          margin-left: auto !important;
+        }
+      }
+    }
+}
+  
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      .mx-auto {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+    @else {
+      @include rwd($value) {
+        .mx-#{$key}-auto {
+          margin-right: auto !important;
+          margin-left: auto !important;
+        }
+      }
+    }
+}
+  
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      .my-auto {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+    @else {
+      @include rwd($value) {
+        .my-#{$key}-auto {
+          margin-top: auto !important;
+          margin-bottom: auto !important;
+        }
+      }
+    }
+}
+  
+// margin
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      @for $var from 0 through $max {
+        .m-#{$var} {
+          margin: $var * $spacer;
+        }
+      }
+    } @else {
+      @include rwd($value) {
+        @for $var from 0 through $max {
+          .m-#{$key}-#{$var} {
+            margin: $var * $spacer !important;
+          }
+        }
+      }
+    }
+}
+  
+// margin-x
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      @for $var from 0 through $max {
+        .mx-#{$var} {
+          margin-left: $var * $spacer;
+          margin-right: $var * $spacer;
+        }
+      }
+    } @else {
+      @include rwd($value) {
+        @for $var from 0 through $max {
+          .mx-#{$key}-#{$var} {
+            margin-left: $var * $spacer !important;
+            margin-right: $var * $spacer !important;
+          }
+        }
+      }
+    }
+}
+  
+// margin-y
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      @for $var from 0 through $max {
+        .my-#{$var} {
+          margin-top: $var * $spacer;
+          margin-bottom: $var * $spacer;
+        }
+      }
+    } @else {
+      @include rwd($value) {
+        @for $var from 0 through $max {
+          .my-#{$key}-#{$var} {
+            margin-top: $var * $spacer !important;
+            margin-bottom: $var * $spacer !important;
+          }
+        }
+      }
+    }
+}
+  
+// margin-top
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      @for $var from 0 through $max {
+        .mt-#{$var} {
+          margin-top: $var * $spacer;
+        }
+      }
+    } @else {
+      @include rwd($value) {
+        @for $var from 0 through $max {
+          .mt-#{$key}-#{$var} {
+            margin-top: $var * $spacer !important;
+          }
+        }
+      }
+    }
+}
+  
+// margin-right
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      @for $var from 0 through $max {
+        .me-#{$var} {
+          margin-right: $var * $spacer;
+        }
+      }
+    } @else {
+      @include rwd($value) {
+        @for $var from 0 through $max {
+          .me-#{$key}-#{$var} {
+            margin-right: $var * $spacer !important;
+          }
+        }
+      }
+    }
+}
+  
+// margin-bottom
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      @for $var from 0 through $max {
+        .mb-#{$var} {
+          margin-bottom: $var * $spacer;
+        }
+      }
+    } @else {
+      @include rwd($value) {
+        @for $var from 0 through $max {
+          .mb-#{$key}-#{$var} {
+            margin-bottom: $var * $spacer !important;
+          }
+        }
+      }
+    }
+}
+  
+// margin-left
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      @for $var from 0 through $max {
+        .ms-#{$var} {
+          margin-left: $var * $spacer;
+        }
+      }
+    } @else {
+      @include rwd($value) {
+        @for $var from 0 through $max {
+          .ms-#{$key}-#{$var} {
+            margin-left: $var * $spacer !important;
+          }
+        }
+      }
+    }
+}
+  
+// padding
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      @for $var from 0 through $max {
+        .p-#{$var} {
+          padding: $var * $spacer;
+        }
+      }
+    } @else {
+      @include rwd($value) {
+        @for $var from 0 through $max {
+          .p-#{$key}-#{$var} {
+            padding: $var * $spacer !important;
+          }
+        }
+      }
+    }
+}
+  
+// padding-x
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      @for $var from 0 through $max {
+        .px-#{$var} {
+          padding-left: $var * $spacer;
+          padding-right: $var * $spacer;
+        }
+      }
+    } @else {
+      @include rwd($value) {
+        @for $var from 0 through $max {
+          .px-#{$key}-#{$var} {
+            padding-left: $var * $spacer !important;
+            padding-right: $var * $spacer !important;
+          }
+        }
+      }
+    }
+}
+  
+// padding-y
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      @for $var from 0 through $max {
+        .py-#{$var} {
+          padding-top: $var * $spacer;
+          padding-bottom: $var * $spacer;
+        }
+      }
+    } @else {
+      @include rwd($value) {
+        @for $var from 0 through $max {
+          .py-#{$key}-#{$var} {
+            padding-top: $var * $spacer !important;
+            padding-bottom: $var * $spacer !important;
+          }
+        }
+      }
+    }
+}
+  
+// padding-top
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      @for $var from 0 through $max {
+        .pt-#{$var} {
+          padding-top: $var * $spacer;
+        }
+      }
+    } @else {
+      @include rwd($value) {
+        @for $var from 0 through $max {
+          .pt-#{$key}-#{$var} {
+            padding-top: $var * $spacer !important;
+          }
+        }
+      }
+    }
+}
+  
+// padding-right
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      @for $var from 0 through $max {
+        .pe-#{$var} {
+          padding-right: $var * $spacer;
+        }
+      }
+    } @else {
+      @include rwd($value) {
+        @for $var from 0 through $max {
+          .pe-#{$key}-#{$var} {
+            padding-right: $var * $spacer !important;
+          }
+        }
+      }
+    }
+}
+  
+// padding-bottom
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      @for $var from 0 through $max {
+        .pb-#{$var} {
+          padding-bottom: $var * $spacer;
+        }
+      }
+    } @else {
+      @include rwd($value) {
+        @for $var from 0 through $max {
+          .pb-#{$key}-#{$var} {
+            padding-bottom: $var * $spacer !important;
+          }
+        }
+      }
+    }
+}
+  
+// padding-left
+
+@each $key, $value in $grid-breakpoints {
+    @if not $value {
+      @for $var from 0 through $max {
+        .ps-#{$var} {
+          padding-left: $var * $spacer;
+        }
+      }
+    } @else {
+      @include rwd($value) {
+        @for $var from 0 through $max {
+          .ps-#{$key}-#{$var} {
+            padding-left: $var * $spacer !important;
+          }
+        }
+      }
+    }
+}

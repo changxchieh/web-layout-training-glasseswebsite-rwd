@@ -1,0 +1,68 @@
+@mixin rwd($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin rwd2($min-width, $max-width) {
+    @media (min-width: $min-width) and (max-width: $max-width) {
+        @content;
+    }
+}
+
+@mixin hide-text {
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin text-ellipsis--1 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@mixin text-ellipsis--5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+}
+
+@mixin bg-cover($url) {
+    background-image: url($url);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @content;
+}
+
+@mixin link-hover { 
+    transition: all .3s;
+
+    &:hover {
+        opacity: .8;
+        @content;
+    } 
+}
+
+@mixin before($width, $height) {
+    &::before {
+        content: '';
+        width: $width;
+        height: $height;
+        display: inline-block;
+        @content;
+    }
+}
+
+@mixin after($width, $height) {
+    &::after {
+        content: '';
+        width: $width;
+        height: $height;
+        display: inline-block;
+        @content;
+    }
+}

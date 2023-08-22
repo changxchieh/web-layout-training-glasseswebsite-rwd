@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog</title>
+
+    <%- include('./layout/typography'); -%>
+    
+  </head>
+  <body>
+    <header>
+      
+      <%- include('./layout/nav'); -%>
+
+      <div class="bg-primary-dark">
+        <div class="container">
+          <ul class="blog-navbar">
+            <li class="blog-navbar__item">
+              <a href="#" class="blog-navbar__link py-3 pe-6 pe-md-5 pe-sm-3">
+                最新消息
+              </a>
+            </li>
+            <li class="blog-navbar__item">
+              <a href="#" class="blog-navbar__link py-3 px-6 px-md-5 px-sm-3">
+                特別企劃
+              </a>
+            </li>
+            <li class="blog-navbar__item">
+              <a href="#" class="blog-navbar__link py-3 px-6 px-md-5 px-sm-3">
+                新品上市
+              </a>
+            </li>
+            <li class="blog-navbar__item">
+              <a href="#" class="blog-navbar__link py-3 px-6 ps-md-5 ps-sm-3 pe-sm-0">
+                鏡框小知識
+              </a>
+            </li>
+            <li class="blog-navbar__item ms-auto d-sm-none">
+              <button type="button" class="py-2 ps-6">
+                <span class="blog-navbar__btn lh-icon material-icons-outlined">
+                  search
+                </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="container pt-6 pb-20 pt-md-2 pt-sm-4 pb-sm-16">
+
+        <div class="breadcrumb mb-2">
+          <ul class="breadcrumb__list">
+            <li class="breadcrumb__item">
+              <a href="index.html" class="breadcrumb__link">首頁</a>
+            </li>
+            <li class="breadcrumb__item">
+              <a href="blog.html" class="breadcrumb__link">部落格</a>
+            </li>
+            <li class="breadcrumb__item">
+              <a href="#" class="breadcrumb__link">特別企劃</a>
+            </li>
+            <li class="breadcrumb__item">
+              <a href="blog-01.html" class="breadcrumb__link active">情人特別企劃</a>
+            </li>
+          </ul>
+        </div>
+        <a href="#" class="tag tag--sm me-4">#special</a>
+        <a href="#" class="tag tag--sm mb-2">#event</a>
+
+        <div class="row">
+          <div class="col-8 col-md-9 col-sm-12">
+            <h2 class="primary-title text-black fw-normal">情人特別企劃</h2>
+            <h3 class="primary-subtitle primary-subtitle--sm text-black fw-medium mb-4 mb-md-6 mb-sm-4">2020 Valentine’s Special</h3>
+            <figure class="mb-10 mb-md-6 mb-sm-4">
+              <img class="mb-2 mb-md-4 mb-sm-2" src="/assets/images/blogpage-1.png" alt="blogpage-1">
+              <figcaption>
+                <p class="blog-copy">一年一度西洋情人節即將到來，我們推出最強「情人節企劃」，為這個甜蜜的節日加溫。 本次拍攝的鏡框款式與 NEEDS CLASSIC 聯名設計款，偶爾跟另一半來個低調情侶單品，結合彼此喜好、找出合適框型款式，在這個春夏輕鬆搭出屬於你們的甜蜜默契！</p>
+              </figcaption>
+            </figure>
+            <figure class="mb-10 mb-md-6 mb-sm-4">
+              <img class="mb-2 mb-md-4 mb-sm-2" src="/assets/images/blogpage-2.png" alt="blogpage-2">
+              <figcaption>
+                <p class="blog-copy">一年一度西洋情人節即將到來，我們推出最強「情人節企劃」，為這個甜蜜的節日加溫。 本次拍攝的鏡框款式與 NEEDS CLASSIC 聯名設計款，偶爾跟另一半來個低調情侶單品，結合彼此喜好、找出合適框型款式，在這個春夏輕鬆搭出屬於你們的甜蜜默契！</p>
+              </figcaption>
+            </figure>
+            <figure class="mb-10 mb-md-6 mb-sm-4">
+              <img class="mb-2 mb-md-4 mb-sm-2" src="/assets/images/blogpage-3.png" alt="blogpage-3">
+              <figcaption>
+                <p class="blog-copy">一年一度西洋情人節即將到來，我們推出最強「情人節企劃」，為這個甜蜜的節日加溫。 本次拍攝的鏡框款式與 NEEDS CLASSIC 聯名設計款，偶爾跟另一半來個低調情侶單品，結合彼此喜好、找出合適框型款式，在這個春夏輕鬆搭出屬於你們的甜蜜默契！</p>
+              </figcaption>
+            </figure>
+            <figure class="mb-10 mb-sm-0">
+              <img class="mb-2 mb-md-4 mb-sm-2" src="/assets/images/blogpage-1.png" alt="blogpage-1">
+              <figcaption>
+                <p class="blog-copy">2/14 (五) - 2/20 (日)<br>至本店單筆消費滿 2980 元, 就送情人節限定眼鏡盒 1 個<br>期間優惠還有~~持他牌鏡框更換鏡片<br>薄型非球面鏡片折 300 元<br>濾藍光鏡片折 500 元<br>快快帶上另一半<br>讓彼此每一次睜開眼，都被愛的視線包圍！</p>
+              </figcaption>
+            </figure>
+
+
+
+            <div class="d-sm-none">
+              <ul class="light-border-b d-flex pb-4 mb-6">
+                <li class="me-4"><button type="button" class="blog-copy--hover fw-bold">Share</button></li>
+                <li class="me-4"><button type="button" class="fb-btn"></button></li>
+                <li><button type="button" class="ig-btn"></button></li>
+              </ul>
+              <div class="d-flex jc-sb">
+                <a href="#" class="blog-copy--hover d-flex ai-c">
+                  <span class="me-3 me-md-0 material-icons-outlined">
+                  arrow_back
+                  </span>
+                  上一篇：街頭潮人訪問 1
+                </a>
+                <a href="#" class="blog-copy--hover d-flex ai-c">
+                  下一篇：街頭潮人訪問 2
+                  <span class="ms-3 ms-md-0 material-icons-outlined">
+                    arrow_forward
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- tags -->
+
+          <div class="col-3 d-sm-none">
+            <div class="d-flex ai-c mb-2">
+              <span class="secondary-title secondary-title--md text-primary fw-bold me-3 me-md-1 material-icons-outlined">
+                label
+              </span>
+              <small class="secondary-subtitle secondary-subtitle--md text-primary fw-bold text-upper">tags</small>
+            </div>
+            <a href="#" class="tag tag--md me-6 me-md-4">#special</a>
+            <a href="#" class="tag tag--md">#sale</a>
+            <br>
+            <a href="#" class="tag tag--md me-6 me-md-4">#new_item</a>
+            <a href="#" class="tag tag--md">#interview</a>
+            <br>
+            <a href="#" class="tag tag--md me-6 me-md-4">#trivia</a>
+            <a href="#" class="tag tag--md tag--md">#news</a>
+            <br>
+            <a href="#" class="tag tag--md me-6 me-md-4">#event</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

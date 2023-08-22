@@ -1,0 +1,110 @@
+// grid 
+
+$gutter: 24px;
+$grid-sum: 12; // 12 欄
+$grid-breakpoints: (
+  '': false,
+  xl: 1200px,
+  lg: 992px,
+  md: 768px,
+  sm: 576px,
+  // xs: 375px,
+);
+$pc: 1200px;
+$desktop: 992px;
+$pad: 768px;
+$mobile: 576px;
+
+
+
+
+
+// spacing 
+
+$spacer: 4px; // 設定 spacer 基數為 4
+$max: 75; // 設定給迴圈次數的最大值
+
+
+
+
+
+// color 
+
+$white:  #fff;
+$gray-1: #F2F2F2;
+$gray-2: #DEE2E6; 
+$gray-3: #DCDCDC;
+$gray-4: #CED4DA;
+$gray-5: #707070;
+$gray-6: #555555;
+$gray-7: #495057;
+$gray-8: #212529;
+$gray-9: #0A0A0A;
+$black:  #000;
+
+$primary: #aa0601;
+$primary-light: #fbf2f2;
+$primary-dark: #650300;
+$secondary: #9F1213;
+
+$success-1: #5F3E2D; // product's color type
+$success-2: #B75929; // product's color type
+
+
+
+
+
+// Typography
+
+$theme-fonts: 'Roboto', 'Noto Sans TC', sans-serif;
+
+
+
+
+
+// font-size
+
+$font-size-base: 1rem; // 16px
+
+$font-size-sm: $font-size-base * 0.875; // 14px
+
+$font-size-h1: $font-size-base * 4; // 64px
+$font-size-h2: $font-size-base * 3; // 48px
+$font-size-h3: $font-size-base * 2.25; // 36px
+$font-size-h4: $font-size-base * 1.5; // 24px
+$font-size-h5: $font-size-base * 1.25; // 20px
+$font-size-h6: $font-size-base; // 16px
+
+$font-size-p1: $font-size-base * 2.625; // 42px
+$font-size-p2: $font-size-base * 2; // 32px
+$font-size-p3: $font-size-base * 1.1875; // 19px
+$font-size-p4: $font-size-base * 1.125; // 18px
+
+
+
+
+
+// font-weight 
+
+$regular-wght: 400;
+$medium-wght: 500;
+$bold-wght: 700;
+$black-wght: 900;
+
+
+
+
+
+// border
+
+$light-border-color: #00000029;
+$dark-border-color: #00000020;
+
+$light-border: 1px solid $light-border-color;
+$dark-border: 1px solid $dark-border-color;
+$white-border: 1px solid #FFF;
+
+
+
+
+
