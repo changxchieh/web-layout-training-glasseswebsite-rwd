@@ -2,8 +2,8 @@
   max-width: 1296px + $gutter;
   margin-left: auto;
   margin-right: auto;
-  padding-left: $gutter / 2;
-  padding-right: $gutter / 2;
+  padding-left: calc($gutter / 2);
+  padding-right: calc($gutter / 2);
     @include rwd($pad) {
       max-width: 696px + $gutter;
     }
@@ -16,15 +16,15 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: $gutter / 2;
-  padding-right: $gutter / 2;
+  padding-left: calc($gutter / 2);
+  padding-right: calc($gutter / 2);
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -($gutter / 2);
-  margin-right: -($gutter / 2);
+  margin-left: -(calc($gutter / 2));
+  margin-right: -(calc($gutter / 2));
 }
 
 
@@ -53,8 +53,8 @@
 
 %col {
   width: 100%;
-  padding-left: $gutter / 2;
-  padding-right: $gutter / 2;
+  padding-left: calc($gutter / 2);
+  padding-right: calc($gutter / 2);
 }
 
 @each $key, $value in $grid-breakpoints {
@@ -77,16 +77,16 @@
   @if not $value {
     @for $var from 1 through $grid-sum {
       .col-#{$var} {
-        max-width: 100% * ($var / $grid-sum);
-        flex: 0 0 (100% * ($var / $grid-sum));
+        max-width: 100% * calc($var / $grid-sum);
+        flex: 0 0 (100% * calc($var / $grid-sum));
       }
     }
   } @else {
     @include rwd($value) {
       @for $var from 1 through $grid-sum {
         .col-#{$key}-#{$var} {
-          max-width: 100% * ($var / $grid-sum);
-          flex: 0 0 (100% * ($var / $grid-sum));
+          max-width: 100% * calc($var / $grid-sum);
+          flex: 0 0 (100% * calc($var / $grid-sum));
         }
       }
     }
